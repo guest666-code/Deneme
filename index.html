@@ -2,18 +2,96 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Siyah Tema</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpleguy Terminal</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #121212; /* Koyu arka plan */
-            color: #ffffff;            /* Beyaz metinler */
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #0b0b0f;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .terminal {
+            background: rgba(18, 18, 24, 0.85);
+            border: 1px solid #1f1f2e;
+            box-shadow: 0 0 30px rgba(0, 255, 128, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .terminal::before {
+            content: "● ● ●";
+            color: #ff5f56;
+            font-size: 12px;
+            letter-spacing: 4px;
+            position: absolute;
+            top: 12px;
+            left: 15px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .hello {
+            color: #00ff88;
+            font-size: 14px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 span {
+            color: #a855f7;
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 24px;
+            background-color: #00ff88;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <div>hello world!</div>
-    <h1>NABER</h1>
+
+    <div class="terminal">
+        <div class="content">
+            <div class="hello">> hello world!</div>
+            <h1>NABER<span>_</span></h1>
+            <span class="cursor"></span>
+        </div>
+    </div>
+
 </body>
 </html>
